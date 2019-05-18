@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Env">
+      <UniqueIdentifier>{6d4bf74d-e365-4726-8d77-74359445a37d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{ec82accd-9ac5-4471-a946-ccc3d4ff0cb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{59975ca6-ba5d-4f4a-8dbc-55502e5da8a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{18ef3819-09a5-46be-98b3-70d22f74d318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MD5Hash">
+      <UniqueIdentifier>{185862d0-d026-4457-927d-4aff1a440a79}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Env\Env.h">
+      <Filter>Env</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\IConfig.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\ILogger.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\Config.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger\Logger.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5Hash\MD5Hash.h">
+      <Filter>MD5Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="ctpl.h">
+      <Filter>MD5Hash</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckSumCalc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Env\Env.cpp">
+      <Filter>Env</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\Config.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger\Logger.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5Hash\MD5Hash.cpp">
+      <Filter>MD5Hash</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
