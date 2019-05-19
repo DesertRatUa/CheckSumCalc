@@ -1,9 +1,10 @@
 #include "pch.h"
+#include <thread>
 #include "Config.h"
 
 static const unsigned DEFAULT_BLOCK_SIZE = 1024 * 1024;
 
-Config::Config() : m_blockSize(DEFAULT_BLOCK_SIZE)
+Config::Config() : m_blockSize(DEFAULT_BLOCK_SIZE), m_numCores(std::thread::hardware_concurrency())
 {
 }
 
@@ -11,19 +12,24 @@ Config::~Config()
 {
 }
 
-const std::string Config::GetInputFilePath() const
+std::string Config::GetInputFilePath() const
 {
 	return m_inputPath;
 }
 
-const std::string Config::GetOutputFilePath() const
+std::string Config::GetOutputFilePath() const
 {
 	return m_outpupPath;
 }
 
-const unsigned Config::GetBlockSize() const
+unsigned Config::GetBlockSize() const
 {
 	return m_blockSize;
+}
+
+unsigned Config::GetThreadNum() const
+{
+	return m_numCores;
 }
 
 void Config::SetInputFilePath(const std::string& path)

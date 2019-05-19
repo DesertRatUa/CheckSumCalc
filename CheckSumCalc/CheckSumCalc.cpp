@@ -30,19 +30,29 @@ void SetupConfig(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	Env env;
-	SetupEnv(env);
-
-	if (argc < 3)
+	try
 	{
-		LOG("Min 2 args");
-		return 1;
-	}
-	
-	SetupConfig(argc, argv);
-	
-	MD5Hash hash;
-	hash.CalculateHashForFile();
+		Env env;
+		SetupEnv(env);
 
+		if (argc < 3)
+		{
+			LOG("Min 2 args");
+			return 1;
+		}
+
+		SetupConfig(argc, argv);
+
+		MD5Hash hash;
+		hash.CalculateHashForFile();
+	}
+	catch (std::exception &e)
+	{
+		LOGERROR("Exception: " + std::string(e.what()));
+	}
+	catch (...)
+	{
+		LOGERROR("Unrecognized Exception catch");
+	}
 	return 0;
 }

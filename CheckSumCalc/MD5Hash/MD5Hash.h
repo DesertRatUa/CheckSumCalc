@@ -9,13 +9,10 @@
 class MD5Hash
 {
 public:
-	typedef std::vector<BYTE> TVecBuff;
-	typedef std::shared_ptr<TVecBuff> TShareVecBuff;
-
-	typedef std::shared_ptr<std::string> TShareString;
-	typedef std::queue<TShareString> TQueShareStrings;
-
-	typedef std::shared_ptr<std::promise<void>> TShareMutex;
+	typedef std::vector<BYTE> TByteVec;
+	typedef std::shared_ptr<TByteVec> TByteVecShare;
+	typedef std::shared_ptr<std::string> TStringShare;
+	typedef std::shared_ptr<std::promise<void>> TSharePrm;
 
 public:
 	MD5Hash();
@@ -24,18 +21,20 @@ public:
 	void CalculateHashForFile();
 
 private:
-	void AddJobToQueue(TShareVecBuff buff);
+	void AddJobToQueue(TByteVecShare buff);
 
-	static void StoreHashForBuff(int id, TShareVecBuff buff, TShareMutex prev, TShareMutex own);
-	void PushHashResult(TShareString& str);
-	TShareString PopFrontHashResult();
+	static void StoreHashForBuff(int id, TByteVecShare buff, TSharePrm prev, TSharePrm own);
+	static void WriteHasToFile();
 
-	TQueShareStrings m_results;
+	void PushHashResult(TStringShare& str);
+
+	bool m_run;
 	std::mutex m_resultMutex;
-	std::mutex m_jobsMutex;
+	std::thread* m_writeThread;
 	ctpl::thread_pool m_threadPool;
-	TShareMutex m_currThreadMutex;
-
+	std::string m_result;
+	TSharePrm m_currThreadPromise;
+	
 	static MD5Hash* m_instance;
 };
 
