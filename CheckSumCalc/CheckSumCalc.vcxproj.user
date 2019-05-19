@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerCommandArguments>"D:\Downloads\Films\ClanSoprano\The.Sopranos.S04.720p.x264.Rus.Goblin\Sopranos.S04E05.720p.x264.iLL.RUS.Goblin.m2ts" "H:\Project\CheckSumCalc\output.txt"</LocalDebuggerCommandArguments>
-    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-  </PropertyGroup>
-</Project>
